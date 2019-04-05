@@ -4,7 +4,8 @@ selectId = "insertedSelect";
 select.id = selectId
 
 options =[
-  {cost:"799" , label:"35,000 FBA Orders"},
+  {cost:"599" , label:"35,000 FBA Orders"},
+  {cost:"799" , label:"50,000 FBA Orders"},
   {cost:"1099", label:"75,000 FBA Orders"},
   {cost:"1349", label:"100,000 FBA Orders"},
   {cost:"1599", label:"125,000 FBA Orders"},
