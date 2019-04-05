@@ -43,7 +43,9 @@ function onchange(e){
 select.onchange=onchange
 
 function insertSelector(){
-  document.querySelectorAll("[id^=hs_cos_wrapper_module] > ul > li:nth-child(1)")[3].replaceWith(select)
+  const liWrapper = document.createElement('li');
+  liWrapper.appendChild(select);
+  document.querySelectorAll("[id^=hs_cos_wrapper_module] > ul > li:nth-child(1)")[3].replaceWith(liWrapper)
 }
 
 function getStartElement(){
