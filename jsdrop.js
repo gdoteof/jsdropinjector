@@ -68,7 +68,7 @@ function getPriceElement(){
 }
 
 function getButtonElement(){
-   return document.querySelector('body > div.body-container-wrapper > div > div.row-fluid-wrapper.row-depth-1.row-number-20 > div > div > div > div.row-fluid-wrapper.row-depth-1.row-number-3 > div > div > div > div > div:nth-child(4) span a.button')
+   return document.querySelector('body > div.body-container-wrapper > div > div.row-fluid-wrapper.row-depth-1.row-number-20 > div > div > div > div.row-fluid-wrapper.row-depth-1.row-number-3 > div > div > div > div > div:nth-child(4) a.button')
 }
 
 function attach(){
