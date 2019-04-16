@@ -52,23 +52,24 @@ function onchange(e){
 
 select.onchange=onchange
 
+//This is a little finicky still.  It assumes somewhat stable internal structure.  We need an ID or class on the specific <ul> to be safe.
 function insertSelector(){
   const liWrapper = document.createElement('li');
   liWrapper.appendChild(select);
-  document.querySelectorAll("[id^=hs_cos_wrapper_module] > ul > li:nth-child(1)")[4].replaceWith(liWrapper)
+  document.querySelector("#rsp-enterprise-column ul > li:nth-child(1)").replaceWith(liWrapper)
 }
 
 function getStartElement(){
-  return document.querySelectorAll('body > div.body-container-wrapper > div > div.row-fluid-wrapper.row-depth-1.row-number-20 > div > div > div > div.row-fluid-wrapper.row-depth-1.row-number-3 > div > div > div > div > div > div > div > div:nth-child(6) span[id^=hs_cos_wrapper_module]')[1]
+  return document.querySelector('#rsp-enterprise-column .rsp-pricing-enterprise--starting-at')
 }
 
 
 function getPriceElement(){
-  return document.querySelectorAll('body > div.body-container-wrapper > div > div.row-fluid-wrapper.row-depth-1.row-number-20 > div > div > div > div.row-fluid-wrapper.row-depth-1.row-number-3 > div > div > div > div > div > div > div > div:nth-child(6) span[id^=hs_cos_wrapper_module]')[2]
+  return document.querySelector('#rsp-enterprise-column .rsp-pricing-enterprise--price')
 }
 
 function getButtonElement(){
-   return document.querySelector('body > div.body-container-wrapper > div > div.row-fluid-wrapper.row-depth-1.row-number-20 > div > div > div > div.row-fluid-wrapper.row-depth-1.row-number-3 > div > div > div > div > div > div > div > div:nth-child(6) a.button')
+  return document.querySelector('#rsp-enterprise-column .rsp-pricing-enterprise--button')
 }
 
 function attach(){
