@@ -56,7 +56,7 @@ select.onchange=onchange
 function insertSelector(){
   const liWrapper = document.createElement('li');
   liWrapper.appendChild(select);
-  document.querySelector("#rsp-enterprise-column ul > li:nth-child(1)").replaceWith(liWrapper)
+  document.querySelector("#rsp-enterprise-column  .rsp-pricing-enterprise--dropdown").replaceWith(liWrapper)
 }
 
 function getStartElement(){
