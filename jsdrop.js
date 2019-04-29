@@ -48,6 +48,7 @@ function onchange(e){
   const baseUrl = "https://restockpro.ecomengine.com/home/signup?p=";
   buttonElem.cta_dest_link = baseUrl + o.p;
   buttonElem.href = baseUrl + o.p;
+  decorateLink(buttonElem);
 }
 
 select.onchange=onchange
@@ -70,6 +71,34 @@ function getPriceElement(){
 
 function getButtonElement(){
   return document.querySelector('#rsp-enterprise-column .rsp-pricing-enterprise--button')
+}
+
+function getSavedParams(){
+  try {
+    var stored = sessionStorage.getItem('savedQueryParams');
+    if(stored){
+      return JSON.parse(stored);
+    }
+  } catch(e){
+    console.error(e);
+  }
+}
+
+function stringifySavedParams(){
+  var params = getSavedParams() || [];
+  params['utm_imported']="true";
+  var out_arr = [];
+  for(p in params){
+    out_arr.push(p + "=" + params[p])
+  }
+  return out_arr.join("&")
+}
+
+function decorateLink(link){
+    if(link.href.indexOf("?") === -1){
+        link.href = link.href + "?"
+      }
+    link.href = link.href.replace(/\?/, "?" + stringifySavedParams() + "&")
 }
 
 function attach(){
